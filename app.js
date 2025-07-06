@@ -25,6 +25,13 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
+
+if (!process.env.MONGO_URL) {
+  throw new Error("Missing MONGO_URL environment variable");
+}
+
+
+
 const store = MongoStore.create({
     mongoUrl:dbUrl,
     crypto:{
