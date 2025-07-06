@@ -1,0 +1,39 @@
+    <% layout("/layouts/boilerplate")%>
+    <body>
+    <div class="Addlist">
+        <div class="left-side">
+            <form method="POST" novalidate class="needs-validation" action="/listing" enctype="multipart/form-data">  
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" name="listing[title]" class="form-control" id="exampleFormControlInput1" required placeholder="Enter Property Title">
+                </div>
+                <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" name="listing[description]" id="exampleFormControlTextarea1"  rows="3"></textarea>
+
+                <label for="exampleFormControlInput1" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" name="listing[image]" id="exampleFormControlInput1"  placeholder="name@example.com">
+
+                <label for="exampleFormControlInput1" class="form-label">Price</label>
+                <input type="number" class="form-control" name="listing[price]" id="exampleFormControlInput1" required placeholder="12,000">
+
+                <label for="exampleFormControlInput1" class="form-label">State</label>
+                <input type="text" class="form-control" name="listing[country]" id="exampleFormControlInput1" required placeholder="Bihar">
+
+                <label for="exampleFormControlInput1" class="form-label">Location</label>
+                <input type="text" class="form-control" name="listing[location]" id="exampleFormControlInput1" required placeholder="patna..">
+                </div>
+
+                <button type="submit" class="btn btn-danger">Add</button>
+                    </form>
+                    </div>
+
+        <div class="right-side">
+            <img
+            src="/assets/addlist.png"
+            alt="addlist"
+            class="addlistimg"/>
+        </div>    
+    </div>
+
+    </body>

@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <h1>Edit Listings</h1>
+    <form method="POST" action="/listing/<%=listing._id%>?_method=PUT" enctype="multipart/form-data">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input type="text" name="listing[title]" class="form-control" id="exampleFormControlInput1" value="<%=listing.title%>">
+                <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea class="form-control" name="listing[description]" id="exampleFormControlTextarea1" value="<%=listing.description%>" rows="3"></textarea>
+
+                <label for="exampleFormControlInput1" class="form-label">Image details</label>
+                <input type="file" class="form-control" name="listing[image]" id="exampleFormControlInput1" value="<%=listing.image.url%>">
+
+                <label for="exampleFormControlInput1" class="form-label">Price</label>
+                <input type="number" class="form-control" name="listing[price]" id="exampleFormControlInput1" value="<%=listing.price%>">
+
+                <label for="exampleFormControlInput1" class="form-label">State</label>
+                <input type="text" class="form-control" name="listing[country]" id="exampleFormControlInput1" value="<%=listing.country%>">
+
+                <label for="exampleFormControlInput1" class="form-label">Location</label>
+                <input type="text" class="form-control" name="listing[location]" id="exampleFormControlInput1" value="<%=listing.location%>">
+        <button type="submit" class="btn btn-danger">Update</button>
+        </div>
+    </form>
+</body>
