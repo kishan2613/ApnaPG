@@ -26,7 +26,7 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
 
-if (!process.env.dbUrl) {
+if (!dbUrl) {
   throw new Error("Missing MONGO_URL environment variable");
 }
 
