@@ -5,6 +5,7 @@ if(process.env.NODE_ENV !="production"){
 
 const express = require("express");
 const app = express();
+app.use(express.json()); // <--- THIS parses JSON body from React fetch
 const mongoose = require("mongoose");
 const Listing = require('./models/listing.js');
 const path = require("path");
@@ -58,7 +59,10 @@ const sessionoption = {
 //Api integration learning
 const cors = require("cors");
 const { wrap } = require("module");
-app.use(cors()); // allow requests from frontend
+app.use(cors({
+  origin: "http://localhost:5173",   // your React frontend
+  credentials: true                  // allow cookies/sessions
+})); // allow requests from frontend
 
 
 
